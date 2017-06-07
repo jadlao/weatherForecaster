@@ -1,0 +1,41 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d6cbcb;
+    color: #333;
+}
+
+.wrapper {
+    padding: 50px;
+    margin: 50px;
+    border: 1px solid #767575;
+}
+
+.wrapper h1 {
+    text-align: center;
+    font-size: 4em;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+#location {
+    margin-bottom: 20px;
+}
+
+.weather {
+    
+}
+
+#tempBtn {
+    padding: 15px;
+    font-size: 1em;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px #a3a3a3;
+    background-color: #c7c4c4;
+}
+
+#tempBtn:hover {
+    background-color: #d9d7d7;
+}
