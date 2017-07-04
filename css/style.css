@@ -24,6 +24,15 @@ html, body {
     text-align: center;
 }
 
+#summary {
+    text-transform: capitalize;
+}
+
+#weatherImage {
+    text-align: center;
+    font-size: 5em;
+}
+
 #tempBtn {
     padding: 15px;
     font-size: 1em;

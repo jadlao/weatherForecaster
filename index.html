@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/font/weathericons-regular-webfont.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -16,7 +18,9 @@
         <div class="weather">
             <div id="summary"></div>
             <div id="temperature"></div>
-            <div id="weatherIcon"></div>
+            <div id="weatherIcon">
+                <i id="weatherImage" class="wi"></i>
+            </div>
             
             <button id="tempBtn" type="submit">Celsius/Farenheit</button>
         </div>

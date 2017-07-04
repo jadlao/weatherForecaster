@@ -27,7 +27,7 @@ $(document).ready(function(){
                     temperature = document.getElementById('temperature');
                 
                 // Print current summary and temperature
-                summary.innerHTML = '<p>' + response.currently.summary + '</p>';
+                summary.innerHTML = '<p>' + response.currently.icon + '</p>';
                 temperature.innerHTML = '<p>' + response.currently.temperature + '&#176;F</p>';
                 
                 // Weather conditions - clear-day, clear-night, rain, snow, sleet, 
@@ -38,34 +38,34 @@ $(document).ready(function(){
                 // Each case displays different SVG weather icon
                 switch(condition){
                     case 'clear-day':
-                        weatherIcon.innerHTML = 'clear day case';
+                        $('#weatherIcon i').addClass('wi-day-sunny');
                     break;
                     case 'clear-night':
-                        weatherIcon.innerHTML = 'clear night case';
+                        $('#weatherImage').addClass('wi-night-clear');
                     break;
                     case 'rain':
-                        weatherIcon.innerHTML = 'rain case';
+                        $('#weatherImage').addClass('wi-rain');
                     break;
                     case 'snow':
-                        weatherIcon.innerHTML = 'snow case';
+                        $('#weatherImage').addClass('wi-snow');
                     break;
                     case 'sleet':
-                        weatherIcon.innerHTML = 'sleet case';
+                        $('#weatherImage').addClass('wi-sleet');
                     break;
                     case 'wind':
-                        weatherIcon.innerHTML = 'wind case';
+                        $('#weatherImage').addClass('wi-windy');
                     break;
                     case 'fog':
-                        weatherIcon.innerHTML = 'fog case';
+                        $('#weatherImage').addClass('wi-fog');
                     break;
                     case 'cloudy':
-                        weatherIcon.innerHTML = 'cloudy case';
+                        $('#weatherImage').addClass('wi-cloudy');
                     break;
                     case 'partly-cloudy-day':
-                        weatherIcon.innerHTML = 'partly-cloudy-day case';
+                        $('#weatherImage').addClass('wi-day-cloudy');
                     break;
                     case 'partly-cloudy-night':
-                        weatherIcon.innerHTML = 'partly-cloudy-night case';
+                        $('#weatherImage').addClass('wi-night-alt-cloudy');
                     break;
                     }
                 }
@@ -78,7 +78,11 @@ $(document).ready(function(){
     // 0F = -17.77778C
     // tempC = (tempF - 32)/1.8
     $('#tempBtn').on('click', function(){
-        console.log('clicked'); 
+        if(true){
+           // change to F
+        }else{
+           // change to C
+        } 
     });
         
     
