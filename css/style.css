@@ -33,6 +33,14 @@ html, body {
     font-size: 5em;
 }
 
+.farenheit {
+    color: red;
+}
+
+.celsius {
+    color: blue;
+}
+
 #tempBtn {
     padding: 15px;
     font-size: 1em;

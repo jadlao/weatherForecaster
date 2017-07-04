@@ -26,9 +26,9 @@ $(document).ready(function(){
                 var summary = document.getElementById('summary'),
                     temperature = document.getElementById('temperature');
                 
-                // Print current summary and temperature
+                // Print weather summary and temperature rounded to nearest integer
                 summary.innerHTML = '<p>' + response.currently.icon + '</p>';
-                temperature.innerHTML = '<p>' + response.currently.temperature + '&#176;F</p>';
+                temperature.innerHTML = '<p>' + Number(response.currently.temperature).toFixed(0) + '&#176;F</p>';
                 
                 // Weather conditions - clear-day, clear-night, rain, snow, sleet, 
                 // wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night
@@ -74,19 +74,46 @@ $(document).ready(function(){
     // Run function
     getLocation();
     
-    // Toggles Celsius/Farenheit
-    // 0F = -17.77778C
-    // tempC = (tempF - 32)/1.8
-    $('#tempBtn').on('click', function(){
-        if(true){
-           // change to F
-        }else{
-           // change to C
-        } 
-    });
+    // Function to convert temperature to Celsius
+    function changeToC(){
+        // get numbers from temperature div
+        var currTempF = $('#temperature').text().match(/\d+/),
+            tempC = (currTempF - 32) / 1.8,
+            updateTemp = document.getElementById('temperature');
         
+        //console.log(tempC);
+        // Round temperature to 0 decimal places
+        tempC = Number(tempC).toFixed(0);
+        // Print temp in Celsius
+        updateTemp.innerHTML = '<p>' + tempC + '&#176;C</p>';
+    }
     
+    // Function to convert temperature to Farenheit
+    function changeToF(){
+        // get numbers from temperature div
+        var currTempC = $('#temperature').text().match(/\d+/),
+            tempF = (currTempC * 1.8) + 32,
+            updateTemp = document.getElementById('temperature');
+        
+        //console.log(tempF);
+        // Round temperature to 0 decimal places
+        tempF = Number(tempF).toFixed(0);
+        // Print temp in Farenheit
+        updateTemp.innerHTML = '<p>' + tempF + '&#176;F</p>';
+    }
+    
+    // Button toggles Celsius/Farenheit
+    $('#tempBtn').on('click', function(){
+        if($('#temperature').hasClass('farenheit')){
+            // change to Celsius
+            $('#temperature').removeClass('farenheit').addClass('celsius');
+            changeToC();
+        }else{
+           // change to Farenheit
+            $('#temperature').removeClass('celsius').addClass('farenheit');
+            changeToF();
+        } 
+    });    
 });
 
-// Different animated icons - rain, sunny, cloudy, thunderstorm, snow - use snap svg
-// Button to toggle F/C
+// BONUS: Animated icons - use snap svg or CSS transform
