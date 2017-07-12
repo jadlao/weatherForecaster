@@ -88,7 +88,7 @@ $(document).ready(function(){
         updateTemp.innerHTML = '<p>' + tempC + '&#176;C</p>';
     }
     
-    // Function to convert temperature to Farenheit
+    // Function to convert temperature to Fahrenheit
     function changeToF(){
         // get numbers from temperature div
         var currTempC = $('#temperature').text().match(/\d+/),
@@ -98,19 +98,19 @@ $(document).ready(function(){
         //console.log(tempF);
         // Round temperature to 0 decimal places
         tempF = Number(tempF).toFixed(0);
-        // Print temp in Farenheit
+        // Print temp in Fahrenheit
         updateTemp.innerHTML = '<p>' + tempF + '&#176;F</p>';
     }
     
-    // Button toggles Celsius/Farenheit
+    // Button toggles Celsius/Fahrenheit
     $('#tempBtn').on('click', function(){
-        if($('#temperature').hasClass('farenheit')){
+        if($('#temperature').hasClass('fahrenheit')){
             // change to Celsius
-            $('#temperature').removeClass('farenheit').addClass('celsius');
+            $('#temperature').removeClass('fahrenheit').addClass('celsius');
             changeToC();
         }else{
-           // change to Farenheit
-            $('#temperature').removeClass('celsius').addClass('farenheit');
+           // change to Fahrenheit
+            $('#temperature').removeClass('celsius').addClass('fahrenheit');
             changeToF();
         } 
     });    
