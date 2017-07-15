@@ -103,7 +103,8 @@ $(document).ready(function(){
     }
     
     // Button toggles Celsius/Fahrenheit
-    $('#tempBtn').on('click', function(){
+    if(showPosition){
+        $('#tempBtn').on('click', function(){
         if($('#temperature').hasClass('fahrenheit')){
             // change to Celsius
             $('#temperature').removeClass('fahrenheit').addClass('celsius');
@@ -113,7 +114,8 @@ $(document).ready(function(){
             $('#temperature').removeClass('celsius').addClass('fahrenheit');
             changeToF();
         } 
-    });    
+        }); 
+       }else{
+           console.log('No weather condition detected');
+       }
 });
-
-// BONUS: Animated icons - use snap svg or CSS transform
