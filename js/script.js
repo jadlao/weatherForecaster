@@ -1,6 +1,7 @@
 $(document).ready(function(){
     
-    var location = document.getElementById('location');
+    var location = document.getElementById('location'),
+        success = false; // no condition has been displayed yet
     
     // Get geolocation
     function getLocation(){
@@ -68,11 +69,12 @@ $(document).ready(function(){
                         $('#weatherImage').addClass('wi-night-alt-cloudy');
                     break;
                     }
+                
+                // Allows toggling between Celsius/Fahrenheit
+                success = true;
                 }
         });
     }
-    // Run function
-    getLocation();
     
     // Function to convert temperature to Celsius
     function changeToC(){
@@ -103,19 +105,22 @@ $(document).ready(function(){
     }
     
     // Button toggles Celsius/Fahrenheit
-    if(showPosition){
-        $('#tempBtn').on('click', function(){
-        if($('#temperature').hasClass('fahrenheit')){
-            // change to Celsius
-            $('#temperature').removeClass('fahrenheit').addClass('celsius');
-            changeToC();
+    $('#tempBtn').on('click', function(){
+        if(success === true){
+            if($('#temperature').hasClass('fahrenheit')){
+                // change to Celsius
+                $('#temperature').removeClass('fahrenheit').addClass('celsius');
+                changeToC();
+            }else{
+                // change to Fahrenheit
+                $('#temperature').removeClass('celsius').addClass('fahrenheit');
+                changeToF();
+            }
         }else{
-           // change to Fahrenheit
-            $('#temperature').removeClass('celsius').addClass('fahrenheit');
-            changeToF();
-        } 
-        }); 
-       }else{
            console.log('No weather condition detected');
-       }
+        }
+    }); 
+    
+    // Run function
+    getLocation();
 });
