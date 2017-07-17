@@ -8,9 +8,17 @@ $(document).ready(function(){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(showPosition);
         }else{
-            location.innerHTML = 'Location not found';
+            // Fallback method
+            console.log('Google Maps API Fallback');
+            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCwyxIlHZf0vhekPLeaOcTdrHPLys5YyEE", function(success){
+                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+                showPosition(success);
+            })
+            .fail(function(err){
+                console.log('API Gelocation error! \n\n' + err);
+            });
         }
-    }
+    };
     
     function showPosition(position){
         // Call Dark Sky API for current location position
