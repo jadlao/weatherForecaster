@@ -9,4 +9,4 @@ Demo: https://jadlao.github.io/weatherForecaster/
 * I can push a button to toggle between Fahrenheit and Celsius.
 
 # Video walkthrough:
-![Alt Text](https://image.ibb.co/kyzbKv/weatherapp.gif)
+![Alt Text](https://image.ibb.co/mk1qev/weatherforecaster.gif)
