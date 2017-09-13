@@ -1,6 +1,8 @@
 # Weather Forecaster
 This simple website finds your current location using geolocation and pulls weather data from the Dark Sky API. It displays the current weather temperature and condition along with an icon representing the weather condition. You can also switch the temperature between Fahrenheit and Celsius.
 
+Stack: jQuery, weather-icons.css, Dark Sky API
+
 Demo: https://jadlao.github.io/weatherForecaster/
 
 # User stories:
