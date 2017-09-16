@@ -3,6 +3,8 @@ This simple website finds your current location using geolocation and pulls weat
 
 Stack: jQuery, weather-icons.css, Dark Sky API
 
+Blog post: https://josefadlao.com/blog/posts/2017-07/weather
+
 Demo: https://jadlao.github.io/weatherForecaster/
 
 # User stories:
