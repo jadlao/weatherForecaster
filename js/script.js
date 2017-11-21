@@ -35,45 +35,52 @@ $(document).ready(function(){
                 // wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night
                 var condition = response.currently.icon,
                     weatherIcon = document.getElementById('weatherIcon');
-                // Switch statements for each weather condition
-                // Each case displays different SVG weather icon
-                switch(condition){
-                    case 'clear-day':
-                        $('#weatherIcon i').addClass('wi-day-sunny');
-                    break;
-                    case 'clear-night':
-                        $('#weatherImage').addClass('wi-night-clear');
-                    break;
-                    case 'rain':
-                        $('#weatherImage').addClass('wi-rain');
-                    break;
-                    case 'snow':
-                        $('#weatherImage').addClass('wi-snow');
-                    break;
-                    case 'sleet':
-                        $('#weatherImage').addClass('wi-sleet');
-                    break;
-                    case 'wind':
-                        $('#weatherImage').addClass('wi-windy');
-                    break;
-                    case 'fog':
-                        $('#weatherImage').addClass('wi-fog');
-                    break;
-                    case 'cloudy':
-                        $('#weatherImage').addClass('wi-cloudy');
-                    break;
-                    case 'partly-cloudy-day':
-                        $('#weatherImage').addClass('wi-day-cloudy');
-                    break;
-                    case 'partly-cloudy-night':
-                        $('#weatherImage').addClass('wi-night-alt-cloudy');
-                    break;
-                    }
+                
+                
+                // Execute function that displays corresponding weather icon
+                displayIcon(condition);
                 
                 // Allows toggling between Celsius/Fahrenheit
                 success = true;
                 }
         });
+    }
+    
+    function displayIcon(condition){
+        // Switch statements for each weather condition
+        // Each case displays different SVG weather icon
+        switch(condition){
+            case 'clear-day':
+                $('#weatherIcon i').addClass('wi-day-sunny');
+            break;
+            case 'clear-night':
+                $('#weatherImage').addClass('wi-night-clear');
+            break;
+            case 'rain':
+                $('#weatherImage').addClass('wi-rain');
+            break;
+            case 'snow':
+                $('#weatherImage').addClass('wi-snow');
+            break;
+            case 'sleet':
+                $('#weatherImage').addClass('wi-sleet');
+            break;
+            case 'wind':
+                $('#weatherImage').addClass('wi-windy');
+            break;
+            case 'fog':
+                $('#weatherImage').addClass('wi-fog');
+            break;
+            case 'cloudy':
+                $('#weatherImage').addClass('wi-cloudy');
+            break;
+            case 'partly-cloudy-day':
+                $('#weatherImage').addClass('wi-day-cloudy');
+            break;
+            case 'partly-cloudy-night':
+                $('#weatherImage').addClass('wi-night-alt-cloudy');
+            break;
+        }
     }
     
     // Function to convert temperature to Celsius
